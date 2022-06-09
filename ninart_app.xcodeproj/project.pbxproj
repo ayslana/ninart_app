@@ -10,13 +10,15 @@
 		D42D04262850E0C7003DA055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D04252850E0C7003DA055 /* AppDelegate.swift */; };
 		D42D04282850E0C7003DA055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D04272850E0C7003DA055 /* SceneDelegate.swift */; };
 		D42D042A2850E0C7003DA055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D04292850E0C7003DA055 /* ViewController.swift */; };
-		D42D042D2850E0C7003DA055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42D042B2850E0C7003DA055 /* Main.storyboard */; };
 		D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D42D042E2850E0C7003DA055 /* ninart_app.xcdatamodeld */; };
 		D42D04322850E0C8003DA055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42D04312850E0C8003DA055 /* Assets.xcassets */; };
 		D42D04352850E0C8003DA055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42D04332850E0C8003DA055 /* LaunchScreen.storyboard */; };
 		D42D04402850E0C8003DA055 /* ninart_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D043F2850E0C8003DA055 /* ninart_appTests.swift */; };
 		D42D044A2850E0C8003DA055 /* ninart_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D04492850E0C8003DA055 /* ninart_appUITests.swift */; };
 		D42D044C2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */; };
+		D4D9CD7E28520F3400B8B75C /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD7D28520F3400B8B75C /* File.swift */; };
+		D4D9CD8028520F3C00B8B75C /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD7F28520F3C00B8B75C /* File.swift */; };
+		D4D9CD832852104100B8B75C /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD822852104100B8B75C /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +43,6 @@
 		D42D04252850E0C7003DA055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D42D04272850E0C7003DA055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D42D04292850E0C7003DA055 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D42D042C2850E0C7003DA055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D42D042F2850E0C7003DA055 /* ninart_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ninart_app.xcdatamodel; sourceTree = "<group>"; };
 		D42D04312850E0C8003DA055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D42D04342850E0C8003DA055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,9 @@
 		D42D04452850E0C8003DA055 /* ninart_appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ninart_appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42D04492850E0C8003DA055 /* ninart_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITests.swift; sourceTree = "<group>"; };
 		D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4D9CD7D28520F3400B8B75C /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		D4D9CD7F28520F3C00B8B75C /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		D4D9CD822852104100B8B75C /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +105,12 @@
 		D42D04242850E0C7003DA055 /* ninart_app */ = {
 			isa = PBXGroup;
 			children = (
+				D4D9CD812852102500B8B75C /* Services */,
+				D42D045B2850EC22003DA055 /* Models */,
+				D42D045A2850EC1C003DA055 /* Views */,
+				D42D04592850EC14003DA055 /* Controllers */,
 				D42D04252850E0C7003DA055 /* AppDelegate.swift */,
 				D42D04272850E0C7003DA055 /* SceneDelegate.swift */,
-				D42D04292850E0C7003DA055 /* ViewController.swift */,
-				D42D042B2850E0C7003DA055 /* Main.storyboard */,
 				D42D04312850E0C8003DA055 /* Assets.xcassets */,
 				D42D04332850E0C8003DA055 /* LaunchScreen.storyboard */,
 				D42D04362850E0C8003DA055 /* Info.plist */,
@@ -130,6 +136,38 @@
 			path = ninart_appUITests;
 			sourceTree = "<group>";
 		};
+		D42D04592850EC14003DA055 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D42D04292850E0C7003DA055 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D42D045A2850EC1C003DA055 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4D9CD7F28520F3C00B8B75C /* File.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D42D045B2850EC22003DA055 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4D9CD7D28520F3400B8B75C /* File.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4D9CD812852102500B8B75C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D4D9CD822852104100B8B75C /* File.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +178,7 @@
 				D42D041E2850E0C7003DA055 /* Sources */,
 				D42D041F2850E0C7003DA055 /* Frameworks */,
 				D42D04202850E0C7003DA055 /* Resources */,
+				D42D04582850EABB003DA055 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -236,7 +275,6 @@
 			files = (
 				D42D04352850E0C8003DA055 /* LaunchScreen.storyboard in Resources */,
 				D42D04322850E0C8003DA055 /* Assets.xcassets in Resources */,
-				D42D042D2850E0C7003DA055 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,11 +294,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D42D04582850EABB003DA055 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D42D041E2850E0C7003DA055 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D9CD7E28520F3400B8B75C /* File.swift in Sources */,
+				D4D9CD8028520F3C00B8B75C /* File.swift in Sources */,
+				D4D9CD832852104100B8B75C /* File.swift in Sources */,
 				D42D042A2850E0C7003DA055 /* ViewController.swift in Sources */,
 				D42D04262850E0C7003DA055 /* AppDelegate.swift in Sources */,
 				D42D04282850E0C7003DA055 /* SceneDelegate.swift in Sources */,
@@ -301,14 +362,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D42D042B2850E0C7003DA055 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D42D042C2850E0C7003DA055 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D42D04332850E0C8003DA055 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -448,7 +501,6 @@
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -476,7 +528,6 @@
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
