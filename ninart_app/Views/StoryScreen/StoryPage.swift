@@ -10,30 +10,43 @@ import UIKit
 class StoryPage: UIScrollView {
     
     //MARK: Variables
-    let storyPageScroll: UIScrollView = {
-    
-        let storyPageScroll = UIScrollView()
+    let sideScroll: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         
-        storyPageScroll.backgroundColor = UIColor.Primary
+        scrollView.backgroundColor = .clear
+        scrollView.isPagingEnabled = true
+        scrollView.showsHorizontalScrollIndicator = false
         
-        return storyPageScroll
+        return scrollView
     }()
     
     let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
         
         pageControl.numberOfPages = 4
         pageControl.backgroundStyle = .minimal
         pageControl.backgroundColor = .clear
-        pageControl.translatesAutoresizingMaskIntoConstraints = true
         
         return pageControl
+    }()
+    
+    let textView: UIScrollView = {
+        let textView = UIScrollView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        textView.backgroundColor = .clear
+        textView.isPagingEnabled = true
+        textView.showsVerticalScrollIndicator = false
+        
+        return textView
     }()
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "octopus")
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
         
         return imageView
     }()
@@ -49,46 +62,43 @@ class StoryPage: UIScrollView {
         return pageText
     }()
     
-    let greenView = UIView()
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.numberOfLines = 0
+        label.sizeToFit()
+        label.textAlignment = .center
+        label.font = UIFont(name: "GillSans-bold", size: 40)
+        label.text = "✨ Here I'll tell you a story about a scary guy 🫣"
+        label.textColor = UIColor.white
+        
+        return label
+    }()
+    
+    let subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.numberOfLines = 0
+        label.font = UIFont(name: "GillSans", size: 30)
+        label.text = "🎃💀👻"
+        label.textColor = UIColor.white
+        
+        return label
+    }()
+    
+    //MARK: Override
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        
-        greenView.backgroundColor = .green
-        
-        //MARK: Frame
-        storyPageScroll.frame = CGRect(
-            x: 0,
-            y: 0,
-            width: frame.size.width - 40,
-            height:frame.size.height/3)
-        pageControl.frame = CGRect(
-            x: 0,
-            y: frame.size.height-100,
-            width: 0,
-            height: 100)
-        imageView.frame = storyPageScroll.frame
-        greenView.frame = .zero
-        pageText.frame = CGRect(x: 0, y: 0, width: greenView.frame.size.width, height: frame.size.height / 4)
-
-        //MARK: Centered
-        storyPageScroll.center = CGPoint(
-            x: frame.midX,
-            y: frame.size.height/4)
-        imageView.center = storyPageScroll.center
-        pageText.center = CGPoint(
-            x: frame.midX,
-            y: (frame.size.height/4)*2)
-        
-        addSubview(storyPageScroll)
-        addSubview(pageControl)
-//        addSubview(greenView)
-        addSubview(imageView)
-//        addSubview(pageText)
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        frame = bounds
     }
 }

@@ -6,23 +6,137 @@
 //
 
 import UIKit
+import CoreData
 
-class StoryViewController: UIViewController {
-
+class StoryViewController: UIViewController, UIScrollViewDelegate {
+    
+    let gradientView = GradientView()
+    let scrollView = StoryPage().sideScroll
+    let pageControl = StoryPage().pageControl
+    
+    let story = Bundle.main.decode([Story].self, from: "data.json")!
+    let storyIndex = 0
+    var hItemsValue:Int {
+        return story[storyIndex].pages.count
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.delegate = self
         
-        //MARK: background fullscreen
-        let gradient = GradientView()
-        gradient.frame = view.bounds
+        addGradientConstraints()
+        configureScrollView()
+        createPageDisplay()
+        setPageControl()
         
-        //MARK: storyPage
-        let storyPage = StoryPage(frame: view.bounds)
-        storyPage.frame = view.bounds
+        pageControl.addTarget(self, action: #selector(pageControlDidChange), for: .valueChanged)
         
-        //MARK: AddSubviews
-        view.addSubview(gradient)
-        view.addSubview(storyPage)
     }
-}
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(floorf(Float(scrollView.contentOffset.x)/Float(scrollView.frame.size.width)))
+    }
+    
+    //MARK: SettingHScroll
+    private func configureScrollView() {
+        view.addSubview(scrollView)
+        
+        NSLayoutConstraint.activate([
+            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+        ])
+        
+        let horizontalScroll = CGFloat(hItemsValue) * view.frame.size.width
+        scrollView.contentSize = CGSize(width: horizontalScroll, height: scrollView.frame.size.height)
 
+    }
+    
+    //MARK: CreateHorizontalPages
+    private func createPageDisplay() {
+        for x in 0..<hItemsValue {
+            let page = UIView()
+            let textView = StoryPage().textView
+            let imageDisplay = UIImage(named: story[storyIndex].pages[x].image)
+            let imageView = UIImageView(image: imageDisplay)
+            let titleLabel = StoryPage().titleLabel
+            let subtitleLabel = StoryPage().subtitleLabel
+            
+            scrollView.addSubview(page)
+            page.addSubview(imageView)
+            page.addSubview(textView)
+            page.addSubview(titleLabel)
+            textView.addSubview(subtitleLabel)
+            
+            page.frame = CGRect(
+                x: CGFloat(x) * view.frame.size.width,
+                y: 0,
+                width: view.frame.size.width,
+                height: view.frame.size.height
+            )
+            imageView.frame = CGRect(
+                x: 25,
+                y: 70,
+                width: view.frame.width-50,
+                height: view.center.y/2
+            )
+            
+            NSLayoutConstraint.activate([
+                titleLabel.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+                titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+                titleLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor),
+                textView.centerXAnchor.constraint(equalTo: page.centerXAnchor),
+                textView.widthAnchor.constraint(equalTo: page.widthAnchor, constant: -50),
+                textView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 20),
+                textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+                subtitleLabel.topAnchor.constraint(equalTo: textView.topAnchor),
+                subtitleLabel.bottomAnchor.constraint(equalTo: textView.bottomAnchor),
+                subtitleLabel.widthAnchor.constraint(equalTo: textView.widthAnchor),
+                subtitleLabel.centerXAnchor.constraint(equalTo: textView.centerXAnchor),
+            ])
+           
+            titleLabel.text = "\(story[storyIndex].title)"
+            subtitleLabel.text = "\(story[storyIndex].pages[x].text)"
+        }
+    }
+
+    //MARK: BackScreenConstraints
+    private func addGradientConstraints() {
+        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(gradientView)
+        
+        NSLayoutConstraint.activate([
+            gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            gradientView.topAnchor.constraint(equalTo: view.topAnchor),
+            gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        
+    }
+    
+    //MARK: PageControl
+    private func setPageControl() {
+        view.addSubview(pageControl)
+        
+        NSLayoutConstraint.activate([
+            pageControl.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            pageControl.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            pageControl.topAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+        
+        pageControl.numberOfPages = hItemsValue
+        
+    }
+    
+    //MARK: Selector(PageControl)
+    @objc private func pageControlDidChange(_ sender: UIPageControl) {
+        let current = sender.currentPage
+        
+        scrollView.setContentOffset(CGPoint(x: CGFloat(current)*view.frame.size.width , y: 0), animated: true)
+    }
+    
+}
