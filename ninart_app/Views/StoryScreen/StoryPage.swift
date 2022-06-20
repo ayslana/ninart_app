@@ -37,8 +37,8 @@ class StoryPage: UIScrollView {
         textView.translatesAutoresizingMaskIntoConstraints = false
         
         textView.backgroundColor = .clear
-        textView.isPagingEnabled = true
-        textView.showsVerticalScrollIndicator = false
+        textView.isPagingEnabled = false
+        textView.showsVerticalScrollIndicator = true
         
         return textView
     }()
