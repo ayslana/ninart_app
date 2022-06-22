@@ -20,9 +20,12 @@
 		D42D04402850E0C8003DA055 /* ninart_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D043F2850E0C8003DA055 /* ninart_appTests.swift */; };
 		D42D044A2850E0C8003DA055 /* ninart_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D04492850E0C8003DA055 /* ninart_appUITests.swift */; };
 		D42D044C2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */; };
-		D4D9CD7E28520F3400B8B75C /* modelsfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD7D28520F3400B8B75C /* modelsfile.swift */; };
-		D4D9CD8028520F3C00B8B75C /* viewsfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD7F28520F3C00B8B75C /* viewsfile.swift */; };
 		D4D9CD832852104100B8B75C /* servicefile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD822852104100B8B75C /* servicefile.swift */; };
+		FF530A9228634CB500868564 /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A8F28634CB500868564 /* CollectionDataSource.swift */; };
+		FF530A9328634CB500868564 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9028634CB500868564 /* StoryViewController.swift */; };
+		FF530A9428634CB500868564 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9128634CB500868564 /* CollectionViewController.swift */; };
+		FF530A9628634F0C00868564 /* ZoomAndSnapFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9528634F0C00868564 /* ZoomAndSnapFlowLayout.swift */; };
+		FF530A9828634F1600868564 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF530A9728634F1600868564 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +64,12 @@
 		D42D04452850E0C8003DA055 /* ninart_appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ninart_appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42D04492850E0C8003DA055 /* ninart_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITests.swift; sourceTree = "<group>"; };
 		D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D4D9CD7D28520F3400B8B75C /* modelsfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelsfile.swift; sourceTree = "<group>"; };
-		D4D9CD7F28520F3C00B8B75C /* viewsfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewsfile.swift; sourceTree = "<group>"; };
 		D4D9CD822852104100B8B75C /* servicefile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicefile.swift; sourceTree = "<group>"; };
+		FF530A8F28634CB500868564 /* CollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
+		FF530A9028634CB500868564 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		FF530A9128634CB500868564 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		FF530A9528634F0C00868564 /* ZoomAndSnapFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAndSnapFlowLayout.swift; sourceTree = "<group>"; };
+		FF530A9728634F1600868564 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				D42D04292850E0C7003DA055 /* ViewController.swift */,
+				FF530A8F28634CB500868564 /* CollectionDataSource.swift */,
+				FF530A9128634CB500868564 /* CollectionViewController.swift */,
+				FF530A9028634CB500868564 /* StoryViewController.swift */,
 				7E43267D285B8164008B572D /* StoryPageViewController.swift */,
 			);
 			path = Controllers;
@@ -173,9 +182,9 @@
 		D42D045A2850EC1C003DA055 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF530A9928634F3700868564 /* CarouselScreen */,
 				7E43267A285B7724008B572D /* GradientBackScreen */,
 				7E432675285B6EB1008B572D /* StoryScreen */,
-				D4D9CD7F28520F3C00B8B75C /* viewsfile.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,7 +192,6 @@
 		D42D045B2850EC22003DA055 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D4D9CD7D28520F3400B8B75C /* modelsfile.swift */,
 				7E432683285D5242008B572D /* jsonMap.swift */,
 			);
 			path = Models;
@@ -196,6 +204,15 @@
 				7E432681285D4FFF008B572D /* data.json */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FF530A9928634F3700868564 /* CarouselScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FF530A9528634F0C00868564 /* ZoomAndSnapFlowLayout.swift */,
+				FF530A9728634F1600868564 /* CollectionViewCell.swift */,
+			);
+			path = CarouselScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,15 +367,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4D9CD7E28520F3400B8B75C /* modelsfile.swift in Sources */,
-				D4D9CD8028520F3C00B8B75C /* viewsfile.swift in Sources */,
+				FF530A9428634CB500868564 /* CollectionViewController.swift in Sources */,
 				D4D9CD832852104100B8B75C /* servicefile.swift in Sources */,
 				D42D042A2850E0C7003DA055 /* ViewController.swift in Sources */,
 				7E432684285D5242008B572D /* jsonMap.swift in Sources */,
 				D42D04262850E0C7003DA055 /* AppDelegate.swift in Sources */,
+				FF530A9228634CB500868564 /* CollectionDataSource.swift in Sources */,
 				D42D04282850E0C7003DA055 /* SceneDelegate.swift in Sources */,
+				FF530A9628634F0C00868564 /* ZoomAndSnapFlowLayout.swift in Sources */,
 				7E432677285B6F83008B572D /* StoryPage.swift in Sources */,
 				7E43267E285B8164008B572D /* StoryPageViewController.swift in Sources */,
+				FF530A9828634F1600868564 /* CollectionViewCell.swift in Sources */,
+				FF530A9328634CB500868564 /* StoryViewController.swift in Sources */,
 				D42D04302850E0C7003DA055 /* ninart_app.xcdatamodeld in Sources */,
 				7E43267C285B77A5008B572D /* GradientView.swift in Sources */,
 			);
