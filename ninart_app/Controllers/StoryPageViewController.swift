@@ -47,32 +47,32 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
         ])
-        
+
         let horizontalScroll = CGFloat(hPagesQuantity) * view.frame.size.width
         scrollView.contentSize = CGSize(width: horizontalScroll, height: scrollView.frame.size.height)
 
     }
+    // MARK: CreateHorizontalPages
     
-    //MARK: CreateHorizontalPages
     private func createPageDisplay() {
-        for x in 0..<hPagesQuantity {
+        for element in 0..<hPagesQuantity {
             let page = UIView()
             let textView = StoryPage().textView
-            let imageDisplay = UIImage(named: story[storyIndex].pages[x].image)
+            let imageDisplay = UIImage(named: story[storyIndex].pages[element].image)
             let imageView = UIImageView(image: imageDisplay)
             let titleLabel = StoryPage().titleLabel
             let subtitleLabel = StoryPage().subtitleLabel
-            
+
             imageView.translatesAutoresizingMaskIntoConstraints = false
-            
+
             scrollView.addSubview(page)
             page.addSubview(imageView)
             page.addSubview(textView)
             page.addSubview(titleLabel)
             textView.addSubview(subtitleLabel)
-            
+
             page.frame = CGRect(
-                x: CGFloat(x) * view.frame.size.width,
+                x: CGFloat(element) * view.frame.size.width,
                 y: 0,
                 width: view.frame.size.width,
                 height: view.frame.size.height
@@ -103,7 +103,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             ])
            
             titleLabel.text = "\(story[storyIndex].title)"
-            subtitleLabel.text = "\(story[storyIndex].pages[x].text)"
+            subtitleLabel.text = "\(story[storyIndex].pages[element].text)"
         }
     }
 
