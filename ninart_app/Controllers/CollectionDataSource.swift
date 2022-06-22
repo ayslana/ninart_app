@@ -7,9 +7,17 @@
 
 import UIKit
 
+let story = Bundle.main.decode([Story].self, from: "data.json")!
+
 class CollectionDataSource: NSObject, UICollectionViewDataSource {
     
-    let images: [String] = ["swift", "flame", "brain"]
+    let images : [String] = {
+        var images : [String] = []
+        for pages in story[0].pages {
+            images.append(pages.image)
+        }
+        return images
+    }()
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
@@ -20,8 +28,8 @@ class CollectionDataSource: NSObject, UICollectionViewDataSource {
         
         let imageView: UIImageView = {
            let imageView = UIImageView()
-            imageView.image = UIImage(systemName: images[indexPath.item])
-            imageView.contentMode = .scaleAspectFit
+            imageView.image = UIImage(named: images[indexPath.item])
+            imageView.contentMode = .scaleToFill
             return imageView
         }()
         cell.addSubview(imageView)
