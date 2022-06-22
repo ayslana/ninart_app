@@ -20,8 +20,6 @@
 		D42D04402850E0C8003DA055 /* ninart_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D043F2850E0C8003DA055 /* ninart_appTests.swift */; };
 		D42D044A2850E0C8003DA055 /* ninart_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D04492850E0C8003DA055 /* ninart_appUITests.swift */; };
 		D42D044C2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */; };
-		D4D9CD7E28520F3400B8B75C /* modelsfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD7D28520F3400B8B75C /* modelsfile.swift */; };
-		D4D9CD8028520F3C00B8B75C /* viewsfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD7F28520F3C00B8B75C /* viewsfile.swift */; };
 		D4D9CD832852104100B8B75C /* servicefile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D9CD822852104100B8B75C /* servicefile.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,8 +59,6 @@
 		D42D04452850E0C8003DA055 /* ninart_appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ninart_appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42D04492850E0C8003DA055 /* ninart_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITests.swift; sourceTree = "<group>"; };
 		D42D044B2850E0C8003DA055 /* ninart_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ninart_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D4D9CD7D28520F3400B8B75C /* modelsfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelsfile.swift; sourceTree = "<group>"; };
-		D4D9CD7F28520F3C00B8B75C /* viewsfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewsfile.swift; sourceTree = "<group>"; };
 		D4D9CD822852104100B8B75C /* servicefile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicefile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,7 +171,6 @@
 			children = (
 				7E43267A285B7724008B572D /* GradientBackScreen */,
 				7E432675285B6EB1008B572D /* StoryScreen */,
-				D4D9CD7F28520F3C00B8B75C /* viewsfile.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,7 +178,6 @@
 		D42D045B2850EC22003DA055 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D4D9CD7D28520F3400B8B75C /* modelsfile.swift */,
 				7E432683285D5242008B572D /* jsonMap.swift */,
 			);
 			path = Models;
@@ -350,8 +344,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4D9CD7E28520F3400B8B75C /* modelsfile.swift in Sources */,
-				D4D9CD8028520F3C00B8B75C /* viewsfile.swift in Sources */,
 				D4D9CD832852104100B8B75C /* servicefile.swift in Sources */,
 				D42D042A2850E0C7003DA055 /* ViewController.swift in Sources */,
 				7E432684285D5242008B572D /* jsonMap.swift in Sources */,
@@ -531,7 +523,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 37U5X9NN8C;
+				DEVELOPMENT_TEAM = 44U668YQTW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -558,7 +550,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 37U5X9NN8C;
+				DEVELOPMENT_TEAM = 44U668YQTW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ninart_app/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
