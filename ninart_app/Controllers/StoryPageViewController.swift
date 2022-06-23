@@ -15,11 +15,10 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
     let pageControl = StoryPage().pageControl
     
     let story = Bundle.main.decode([Story].self, from: "data.json")!
-    let storyIndex = 0
-    var hItemsValue:Int {
+    var storyIndex = 0
+    var hPagesQuantity:Int {
         return story[storyIndex].pages.count
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         configureScrollView()
         createPageDisplay()
         setPageControl()
-        
+
         pageControl.addTarget(self, action: #selector(pageControlDidChange), for: .valueChanged)
         
     }
@@ -48,30 +47,32 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
         ])
-        
-        let horizontalScroll = CGFloat(hItemsValue) * view.frame.size.width
+
+        let horizontalScroll = CGFloat(hPagesQuantity) * view.frame.size.width
         scrollView.contentSize = CGSize(width: horizontalScroll, height: scrollView.frame.size.height)
 
     }
+    // MARK: CreateHorizontalPages
     
-    //MARK: CreateHorizontalPages
     private func createPageDisplay() {
-        for x in 0..<hItemsValue {
+        for element in 0..<hPagesQuantity {
             let page = UIView()
             let textView = StoryPage().textView
-            let imageDisplay = UIImage(named: story[storyIndex].pages[x].image)
+            let imageDisplay = UIImage(named: story[storyIndex].pages[element].image)
             let imageView = UIImageView(image: imageDisplay)
             let titleLabel = StoryPage().titleLabel
             let subtitleLabel = StoryPage().subtitleLabel
-            
+
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+
             scrollView.addSubview(page)
             page.addSubview(imageView)
             page.addSubview(textView)
             page.addSubview(titleLabel)
             textView.addSubview(subtitleLabel)
-            
+
             page.frame = CGRect(
-                x: CGFloat(x) * view.frame.size.width,
+                x: CGFloat(element) * view.frame.size.width,
                 y: 0,
                 width: view.frame.size.width,
                 height: view.frame.size.height
@@ -84,6 +85,10 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             )
             
             NSLayoutConstraint.activate([
+                imageView.widthAnchor.constraint(equalTo: view.widthAnchor,multiplier: 3/4),
+                imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                imageView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -20),
+                imageView.centerXAnchor.constraint(equalTo: page.centerXAnchor),
                 titleLabel.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
                 titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
                 titleLabel.widthAnchor.constraint(equalTo: imageView.widthAnchor),
@@ -98,10 +103,11 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             ])
            
             titleLabel.text = "\(story[storyIndex].title)"
-            subtitleLabel.text = "\(story[storyIndex].pages[x].text)"
+            subtitleLabel.text = "\(story[storyIndex].pages[element].text)"
         }
     }
 
+    // TODO: Pesquisar sobre Size Class com ViewCode com ScrollView
     //MARK: BackScreenConstraints
     private func addGradientConstraints() {
         gradientView.translatesAutoresizingMaskIntoConstraints = false
@@ -116,7 +122,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         ])
         
     }
-    
+     
     //MARK: PageControl
     private func setPageControl() {
         view.addSubview(pageControl)
@@ -128,7 +134,7 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
             pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         
-        pageControl.numberOfPages = hItemsValue
+        pageControl.numberOfPages = hPagesQuantity
         
     }
     
@@ -138,5 +144,6 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.setContentOffset(CGPoint(x: CGFloat(current)*view.frame.size.width , y: 0), animated: true)
     }
+
     
 }
