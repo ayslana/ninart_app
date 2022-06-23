@@ -15,9 +15,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Test"
-        
         self.navigationItem.title = "Test"
-        
 
         guard let collectionView = collectionView else { fatalError() }
         //collectionView.decelerationRate = .fast // uncomment if necessary

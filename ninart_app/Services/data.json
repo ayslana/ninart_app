@@ -1,6 +1,7 @@
 [
     {
         "title":"TNBC Van Gogh Style",
+        "image":"starryNightJack",
         "pages":[
             {
                 "image":"starryNightJack",
@@ -21,28 +22,28 @@
         ]
     },
     {
-        "title":"Halloween Town",
+        "title":"A day at the circus",
+        "image":"theCircus",
         "pages":[
             {
-                "image":"starryNightTNBC",
+                "image":"aSundayOnLaGrandeJatte",
                 "text":"This is Halloween Town. 🎃"
             },
             {
-                "image":"starryNightTNBC",
+                "image":"bathersAtAsnieres",
                 "text":"You can see Jack's house from here. 🎃"
-            }
-        ]
-    },
-    {
-        "title":"THIS IS HALLOWEEN ! THIS IS HALLOWEEN !",
-        "pages":[
-            {
-                "image":"octopus",
-                "text":"Just a little octopus 🐙"
             },
             {
-                "image":"starryNightJack",
-                "text":" The pumpkin king is sad..😔🎃"
+                "image":"aSundayAfternoonOnTheIslandOfLaGrandeJatte",
+                "text":"You can see Jack's house from here. 🎃"
+            },
+            {
+                "image":"youngWomanPowderingHerself",
+                "text":"You can see Jack's house from here. 🎃"
+            },
+            {
+                "image":"theCircus",
+                "text":"You can see Jack's house from here. 🎃"
             }
         ]
     },

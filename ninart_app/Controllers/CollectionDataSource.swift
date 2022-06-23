@@ -10,10 +10,9 @@ import UIKit
 let story = Bundle.main.decode([Story].self, from: "data.json")!
 
 class CollectionDataSource: NSObject, UICollectionViewDataSource {
-    
     let images : [String] = {
         var images : [String] = []
-        for pages in story[0].pages {
+        for pages in story{
             images.append(pages.image)
         }
         return images
@@ -25,7 +24,6 @@ class CollectionDataSource: NSObject, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-        
         let imageView: UIImageView = {
            let imageView = UIImageView()
             imageView.image = UIImage(named: images[indexPath.item])
