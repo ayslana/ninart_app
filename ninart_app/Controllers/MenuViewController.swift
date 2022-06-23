@@ -16,10 +16,13 @@ class MenuViewController: UIViewController {
     
     
     override func viewDidLoad() {
-         
+        super.viewDidLoad()
+        
         self.navigationItem.title = "Menu"
         addGradientConstraints()
         addCollectionConstraints()
+        
+        menuCollection.collectionView.delegate = self
     }
     
     //MARK: BackScreenConstraints
@@ -37,6 +40,16 @@ class MenuViewController: UIViewController {
         
     }
     
+    //MARK: NavigationTitleConstraints
+//    private func addCollectionConstraints() {
+//        navigationItem.titleView?.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            navigationItem.titleView?.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+//        ])
+//
+//    }
+    
     //MARK: CollectionConstraints
     private func addCollectionConstraints() {
         menuCollection.view.translatesAutoresizingMaskIntoConstraints = false
@@ -53,4 +66,11 @@ class MenuViewController: UIViewController {
         
     }
 
+}
+
+extension MenuViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        print("selecionou \(indexPath.item)")
+        navigationController!.pushViewController(StoryViewController(), animated: true)
+    }
 }
