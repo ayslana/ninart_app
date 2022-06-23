@@ -45,6 +45,8 @@ class StoryPage: UIScrollView {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
         imageView.image = UIImage(named: "octopus")
         imageView.contentMode = .scaleToFill
         

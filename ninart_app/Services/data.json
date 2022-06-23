@@ -32,5 +32,18 @@
                 "text":"You can see Jack's house from here. 🎃"
             }
         ]
-    }
+    },
+    {
+        "title":"THIS IS HALLOWEEN ! THIS IS HALLOWEEN !",
+        "pages":[
+            {
+                "image":"octopus",
+                "text":"Just a little octopus 🐙"
+            },
+            {
+                "image":"starryNightJack",
+                "text":" The pumpkin king is sad..😔🎃"
+            }
+        ]
+    },
 ]
