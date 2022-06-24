@@ -9,51 +9,42 @@ import UIKit
 import CoreData
 
 class StoryViewController: UIViewController, UIScrollViewDelegate {
-    
     let gradientView = GradientView()
     let scrollView = StoryPage().sideScroll
     let pageControl = StoryPage().pageControl
-    
     let story = Bundle.main.decode([Story].self, from: "data.json")!
-    var storyIndex = 0
+    var storyIndex : Int = 0
     var hPagesQuantity:Int {
         return story[storyIndex].pages.count
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
-        
         addGradientConstraints()
         configureScrollView()
         createPageDisplay()
         setPageControl()
 
         pageControl.addTarget(self, action: #selector(pageControlDidChange), for: .valueChanged)
-        
     }
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(floorf(Float(scrollView.contentOffset.x)/Float(scrollView.frame.size.width)))
     }
-    
-    //MARK: SettingHScroll
+    // MARK: - SettingHScroll
     private func configureScrollView() {
         view.addSubview(scrollView)
-        
         NSLayoutConstraint.activate([
             scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
         ])
 
         let horizontalScroll = CGFloat(hPagesQuantity) * view.frame.size.width
         scrollView.contentSize = CGSize(width: horizontalScroll, height: scrollView.frame.size.height)
 
     }
-    // MARK: CreateHorizontalPages
-    
+    // MARK: - CreateHorizontalPages
     private func createPageDisplay() {
         for element in 0..<hPagesQuantity {
             let page = UIView()
@@ -83,7 +74,6 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                 width: view.frame.width-50,
                 height: view.center.y/2
             )
-            
             NSLayoutConstraint.activate([
                 imageView.widthAnchor.constraint(equalTo: view.widthAnchor,multiplier: 3/4),
                 imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -99,34 +89,29 @@ class StoryViewController: UIViewController, UIScrollViewDelegate {
                 subtitleLabel.topAnchor.constraint(equalTo: textView.topAnchor),
                 subtitleLabel.bottomAnchor.constraint(equalTo: textView.bottomAnchor),
                 subtitleLabel.widthAnchor.constraint(equalTo: textView.widthAnchor),
-                subtitleLabel.centerXAnchor.constraint(equalTo: textView.centerXAnchor),
+                subtitleLabel.centerXAnchor.constraint(equalTo: textView.centerXAnchor)
             ])
-           
             titleLabel.text = "\(story[storyIndex].title)"
             subtitleLabel.text = "\(story[storyIndex].pages[element].text)"
         }
     }
 
     // TODO: Pesquisar sobre Size Class com ViewCode com ScrollView
-    //MARK: BackScreenConstraints
+    // MARK: - BackScreenConstraints
     private func addGradientConstraints() {
         gradientView.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(gradientView)
-        
         NSLayoutConstraint.activate([
             gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradientView.topAnchor.constraint(equalTo: view.topAnchor),
             gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-        
     }
-     
-    //MARK: PageControl
+    // MARK: - PageControl
     private func setPageControl() {
         view.addSubview(pageControl)
-        
+
         NSLayoutConstraint.activate([
             pageControl.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             pageControl.widthAnchor.constraint(equalTo: scrollView.widthAnchor),

@@ -10,6 +10,7 @@ import Foundation
 // MARK: - StoryElement
 struct Story: Codable {
     let title: String
+    let image: String
     let pages: [Page]
 }
 

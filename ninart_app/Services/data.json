@@ -1,48 +1,41 @@
 [
     {
-        "title":"TNBC Van Gogh Style",
+        "title":"Novas luzes",
+        "image":"starryNightTNBC",
         "pages":[
             {
-                "image":"starryNightJack",
-                "text":"Halloween Town is a fantasy world populated by various monster and beings associated with the holliday. 🎃"
-            },
-            {
                 "image":"starryNightTNBC",
-                "text":"Jack Skellington, respected by the citizens as the Pumpkin King, leads them in organizing the annual Halloween celebrations"
+                "text":"Jack estava triste, pois seu dia tinha sido muito cansativo. Já estava deitado na cama pronto para dormir, até que olhou para a janela e viu várias luzes diferentes no céu."
             },
             {
-                "image":"starryNightCoraline",
-                "text":"Another picture, but of Coraline inspired by starry Night of Van Gogh. 🌠"
+                "image":"starryNightJack",
+                "text":"Elas eram tão brilhantes e grandes, que Jack resolveu sair de casa para olhá-las. Ele subiu no local mais alto que encontrou, porque queria chegar mais perto da maior delas."
             },
             {
-                "image":"octopus",
-                "text":"Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙Here is an Icon that I like. And now, back to work. 🐙"
+                "image":"starryNightCoraline2",
+                "text":"Lá, ele encontrou uma garotinha, chamada Carol. Naquela noite, as brilhantes luzes iluminaram o céu e trouxeram uma luz amiga para a vida de Jack."
             }
         ]
     },
     {
-        "title":"Halloween Town",
+        "title":"Novo passeio",
+        "image":"aSundayOnLaGrandeJatte",
         "pages":[
             {
-                "image":"starryNightTNBC",
-                "text":"This is Halloween Town. 🎃"
+                "image":"aSundayOnLaGrandeJatte",
+                "text":"Isabella estava passeando no parque próximo de sua casa. Até que viu alguns amigos. Eles estavam perto do lago e pareciam muito animados conversando."
             },
             {
-                "image":"starryNightTNBC",
-                "text":"You can see Jack's house from here. 🎃"
-            }
-        ]
-    },
-    {
-        "title":"THIS IS HALLOWEEN ! THIS IS HALLOWEEN !",
-        "pages":[
-            {
-                "image":"octopus",
-                "text":"Just a little octopus 🐙"
+                "image":"bathersAtAsnieres",
+                "text":"Ela se aproximou e perguntou sobre o que falavam. Eles planejavam sair para um lugar extraordinário e chamaram ela para ir junto."
             },
             {
-                "image":"starryNightJack",
-                "text":" The pumpkin king is sad..😔🎃"
+                "image":"youngWomanPowderingHerself",
+                "text":"Isabella voltou rápido para casa, pois queria se arrumar. Estava muito empolgada para ir nesse passeio, já que nunca tinha ido em um local tão incrível assim."
+            },
+            {
+                "image":"theCircus",
+                "text":"O passeio foi mágico, divertido, inspirador e único. Naquela noite, Isabella visitou o circo pela primeira vez."
             }
         ]
     },

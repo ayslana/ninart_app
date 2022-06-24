@@ -14,10 +14,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let _ = (scene as? UIWindowScene) else { return }
-        
         let navigationController = UINavigationController(rootViewController: MenuViewController())
         navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.AccentText]
+        navigationController.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
